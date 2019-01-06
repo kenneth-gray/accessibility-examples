@@ -75,3 +75,13 @@ button {
     background-color: #6a5acd;
   }
 }
+
+th, caption {
+  font-weight: bold;
+  text-align: left;
+}
+
+th, td {
+  border: 1px solid #222;
+  padding: 0.2em 0.5em;
+}
