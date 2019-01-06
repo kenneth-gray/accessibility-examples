@@ -1,0 +1,17 @@
+.img {
+  max-width: 100%;
+}
+
+.apple {
+  float: left;
+
+  width: 100%;
+
+  @media (min-width: 400px) {
+    width: 160px;
+  }
+
+  @media (min-width: 640px) {
+    width: 256px;
+  }
+}

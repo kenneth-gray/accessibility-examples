@@ -3,7 +3,7 @@ import { hot } from 'react-hot-loader';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Navigation from './Navigation';
-import { Headings, Home, Inputs, Links, NotFound } from './screens';
+import { Headings, Home, Images, Inputs, Links, NotFound } from './screens';
 
 const App = () => (
   <Router>
@@ -15,6 +15,7 @@ const App = () => (
           <Route path="/headings" exact component={Headings} />
           <Route path="/inputs" exact component={Inputs} />
           <Route path="/links" exact component={Links} />
+          <Route path="/images" exact component={Images} />
           <Route component={NotFound} />
         </Switch>
       </main>

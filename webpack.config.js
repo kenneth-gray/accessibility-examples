@@ -37,6 +37,16 @@ module.exports = {
           'sass-loader',
         ],
       },
+      {
+        test: /\.(jpe?g|gif|png)$/,
+        exclude: /node_modules/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: '30000',
+          },
+        }],
+      },
     ],
   },
   plugins: [
