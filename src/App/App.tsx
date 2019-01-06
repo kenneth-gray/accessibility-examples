@@ -1,29 +1,15 @@
 import React, { Fragment } from 'react';
 import { hot } from 'react-hot-loader';
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+import Navigation from './Navigation';
 import { Headings, Home, Inputs, Links, NotFound } from './screens';
 
 const App = () => (
   <Router>
     <Fragment>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/headings">Headings</Link>
-          </li>
-          <li>
-            <Link to="/inputs">Inputs</Link>
-          </li>
-          <li>
-            <Link to="/links">Links</Link>
-          </li>
-        </ul>
-      </nav>
-      <main>
+      <Navigation />
+      <main id="main">
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/headings" exact component={Headings} />

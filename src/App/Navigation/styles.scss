@@ -1,0 +1,17 @@
+.li {
+  display: inline-block;
+}
+
+.link {
+  display: block;
+  padding: 0.75em 1em;
+}
+
+.skip-link:focus {
+  display: block;
+  border-radius: 5px;
+  background-color: slateblue;
+  color: white;
+  padding: 1em;
+  position: absolute !important;
+}

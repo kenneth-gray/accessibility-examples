@@ -20,6 +20,11 @@ const Links = () => (
       Over: An apple is a sweet, edible fruit produced by an apple tree.{' '}
       <a href="https://en.wikipedia.org/wiki/Apple">Learn more</a>.
     </p>
+    <h2>Use skip links where appropriate</h2>
+    <p>
+      In most cases this will likely just be{' '}
+      <a href="#main">skip to main content</a>.
+    </p>
   </Fragment>
 );
 
