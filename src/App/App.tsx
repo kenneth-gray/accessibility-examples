@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { hot } from 'react-hot-loader';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Navigation from './Navigation';
+import Navigation from './components/Navigation';
 import { Headings, Home, Images, Inputs, Links, NotFound } from './screens';
 
 const App = () => (
