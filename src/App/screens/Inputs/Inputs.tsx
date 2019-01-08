@@ -1,4 +1,5 @@
 import React, { Fragment, ReactNode } from 'react';
+import { Link, Route } from 'react-router-dom';
 
 import styles from './styles.scss';
 
@@ -9,11 +10,9 @@ const Field = ({ children }: FieldProps) => (
   <div className={styles.field}>{children}</div>
 );
 
-const Inputs = () => (
+const Attempt1 = () => (
   <Fragment>
-    <h1>Inputs</h1>
-    <h2>Login forms</h2>
-    <h3>Placeholders only</h3>
+    <h3>Attempt 1</h3>
     <form noValidate method="post">
       <Field>
         <input type="email" placeholder="Email address" />
@@ -25,8 +24,13 @@ const Inputs = () => (
         <button type="submit">Login</button>
       </div>
     </form>
-    <h3>Labels not connected to inputs</h3>
-    <form>
+  </Fragment>
+);
+
+const Attempt2 = () => (
+  <Fragment>
+    <h3>Attempt 2</h3>
+    <form noValidate method="post">
       <Field>
         <div className={styles.fieldLabel}>Email address</div>
         <div>
@@ -43,8 +47,13 @@ const Inputs = () => (
         <button type="submit">Login</button>
       </div>
     </form>
-    <h3>Labels connected to inputs</h3>
-    <form>
+  </Fragment>
+);
+
+const Attempt3 = () => (
+  <Fragment>
+    <h3>Attempt 3</h3>
+    <form noValidate method="post">
       <Field>
         <label className={styles.fieldLabel} htmlFor="email-3">
           Email address
@@ -65,8 +74,13 @@ const Inputs = () => (
         <button type="submit">Login</button>
       </div>
     </form>
-    <h3>Hint text not connected to password</h3>
-    <form>
+  </Fragment>
+);
+
+const Attempt4 = () => (
+  <Fragment>
+    <h3>Attempt 4</h3>
+    <form noValidate method="post">
       <Field>
         <label className={styles.fieldLabel} htmlFor="email-4">
           Email address
@@ -90,8 +104,13 @@ const Inputs = () => (
         <button type="submit">Login</button>
       </div>
     </form>
-    <h3>Hint text connected to password using arai-describedby</h3>
-    <form>
+  </Fragment>
+);
+
+const Attempt5 = () => (
+  <Fragment>
+    <h3>Attempt 5</h3>
+    <form noValidate method="post">
       <Field>
         <label className={styles.fieldLabel} htmlFor="email-5">
           Email address
@@ -119,8 +138,13 @@ const Inputs = () => (
         <button type="submit">Login</button>
       </div>
     </form>
-    <h3>Hint text connected to password using label</h3>
-    <form>
+  </Fragment>
+);
+
+const FinalAttempt = () => (
+  <Fragment>
+    <h3>Final attempt</h3>
+    <form noValidate method="post">
       <Field>
         <label htmlFor="email-final">
           <div className={styles.fieldLabel}>Email address</div>
@@ -144,6 +168,39 @@ const Inputs = () => (
         <button type="submit">Login</button>
       </div>
     </form>
+  </Fragment>
+);
+
+const Inputs = () => (
+  <Fragment>
+    <h1>Inputs</h1>
+    <h2>Login forms</h2>
+    <ul className={styles.ul}>
+      <li className={styles.li}>
+        <Link to="/inputs">Attempt 1</Link>
+      </li>
+      <li className={styles.li}>
+        <Link to="/inputs/attempt-2">Attempt 2</Link>
+      </li>
+      <li className={styles.li}>
+        <Link to="/inputs/attempt-3">Attempt 3</Link>
+      </li>
+      <li className={styles.li}>
+        <Link to="/inputs/attempt-4">Attempt 4</Link>
+      </li>
+      <li className={styles.li}>
+        <Link to="/inputs/attempt-5">Attempt 5</Link>
+      </li>
+      <li className={styles.li}>
+        <Link to="/inputs/final-attempt">Final attempt</Link>
+      </li>
+    </ul>
+    <Route exact path="/inputs" component={Attempt1} />
+    <Route exact path="/inputs/attempt-2" component={Attempt2} />
+    <Route exact path="/inputs/attempt-3" component={Attempt3} />
+    <Route exact path="/inputs/attempt-4" component={Attempt4} />
+    <Route exact path="/inputs/attempt-5" component={Attempt5} />
+    <Route exact path="/inputs/final-attempt" component={FinalAttempt} />
   </Fragment>
 );
 
