@@ -27,9 +27,9 @@ const Navigation = () => (
     <ul className={styles.ul}>
       <NavigationItem to="/">Home</NavigationItem>
       <NavigationItem to="/headings">Headings</NavigationItem>
-      <NavigationItem to="/inputs">Inputs</NavigationItem>
       <NavigationItem to="/links">Links</NavigationItem>
       <NavigationItem to="/images">Images</NavigationItem>
+      <NavigationItem to="/inputs">Inputs</NavigationItem>
     </ul>
   </nav>
 );
