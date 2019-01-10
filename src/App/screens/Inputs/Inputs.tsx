@@ -32,7 +32,7 @@ const Attempt2 = () => (
     <h3>Attempt 2</h3>
     <form noValidate method="post">
       <Field>
-        <div className={styles.fieldLabel}>Email address</div>
+        <label className={styles.fieldLabel}>Email address</label>
         <div>
           <input type="email" />
         </div>
