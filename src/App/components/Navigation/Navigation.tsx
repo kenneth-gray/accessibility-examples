@@ -3,30 +3,8 @@ import React, { ReactNode } from 'react';
 import Link from '../Link';
 import styles from './styles.scss';
 
-const SkipLink = () => (
-  <a className={`visually-hidden ${styles.skipLink}`} href="#main">
-    Skip to main content
-  </a>
-);
-
-type NavigationItemProps = {
-  to: string;
-  children: ReactNode;
-};
-const NavigationItem = ({ to, children }: NavigationItemProps) => (
-  <li className={styles.li}>
-    <Link
-      className={styles.link}
-      to={to}
-      aria-current={window.location.pathname === to ? 'page' : undefined}
-    >
-      {children}
-    </Link>
-  </li>
-);
-
 const Navigation = () => (
-  <nav>
+  <nav className={styles.nav}>
     <SkipLink />
     <ul className={styles.ul}>
       <NavigationItem to="/">Home</NavigationItem>
@@ -39,3 +17,29 @@ const Navigation = () => (
 );
 
 export default Navigation;
+
+function SkipLink() {
+  return (
+    <a className={styles.skipLink} href="#main">
+      Skip to main content
+    </a>
+  );
+}
+
+type NavigationItemProps = {
+  to: string;
+  children: ReactNode;
+};
+function NavigationItem({ to, children }: NavigationItemProps) {
+  return (
+    <li className={styles.li}>
+      <Link
+        className={styles.link}
+        to={to}
+        aria-current={window.location.pathname === to ? 'page' : undefined}
+      >
+        {children}
+      </Link>
+    </li>
+  );
+}

@@ -1,4 +1,5 @@
 import { Component, ReactNode } from 'react';
+import { TOP_OF_PAGE_ID } from '../../constants';
 
 type Props = {
   title: string;
@@ -7,13 +8,11 @@ type Props = {
 
 class Screen extends Component<Props> {
   componentDidMount() {
-    spaLoad(this.props.title);
+    screenUpdate(this.props.title);
   }
 
-  componentDidUpdate(prevProps: Readonly<Props>) {
-    if (prevProps.title !== this.props.title) {
-      spaLoad(this.props.title);
-    }
+  componentDidUpdate() {
+    screenUpdate(this.props.title);
   }
 
   render() {
@@ -23,24 +22,31 @@ class Screen extends Component<Props> {
 
 export default Screen;
 
-function spaLoad(title: string) {
+function screenUpdate(title: string) {
   const documentTitle = `${title} - Accessibility examples`;
   document.title = documentTitle;
 
-  const liveRegion = document.getElementById('live-region');
-  if (!liveRegion) {
-    const newLiveRegion = document.createElement('span');
-    newLiveRegion.setAttribute('aria-live', 'polite');
-    newLiveRegion.setAttribute('role', 'status');
+  const topOfPage = document.getElementById(TOP_OF_PAGE_ID);
+  if (!topOfPage) {
+    const newTopOfPage = document.createElement('span');
+    newTopOfPage.setAttribute('id', TOP_OF_PAGE_ID);
+    newTopOfPage.setAttribute('class', 'visually-hidden');
+    newTopOfPage.setAttribute('tabindex', '-1');
+
+    const removeContent = () => {
+      newTopOfPage.textContent = '';
+    };
+    newTopOfPage.addEventListener('blur', removeContent);
+    newTopOfPage.addEventListener('keydown', removeContent);
 
     const body = document.querySelector('body') as HTMLElement;
-    body.appendChild(newLiveRegion);
+    body.prepend(newTopOfPage);
 
     return;
   }
 
-  liveRegion.textContent = documentTitle;
-  setTimeout(() => {
-    liveRegion.textContent = ' ';
-  }, 1000);
+  if (document.activeElement === topOfPage) {
+    topOfPage.textContent = documentTitle;
+    topOfPage.focus();
+  }
 }

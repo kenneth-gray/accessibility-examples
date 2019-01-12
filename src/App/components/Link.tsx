@@ -1,6 +1,8 @@
 import React, { MouseEvent } from 'react';
 import { Link as RouterLink, LinkProps } from 'react-router-dom';
 
+import { TOP_OF_PAGE_ID } from '../constants';
+
 const Link = ({ onClick, ...rest }: LinkProps) => (
   <RouterLink onClick={callAll(moveFocus, onClick)} {...rest} />
 );
@@ -14,7 +16,13 @@ function callAll(...fns: Array<Function | undefined>) {
 }
 
 function moveFocus() {
-  (document.activeElement as HTMLAnchorElement).blur();
-  const topOfPage = document.getElementById('top-of-page');
-  (topOfPage as HTMLElement).focus();
+  if (document.activeElement) {
+    (document.activeElement as HTMLElement).blur();
+  }
+
+  const topOfPage = document.getElementById(TOP_OF_PAGE_ID);
+  if (topOfPage) {
+    topOfPage.focus();
+    topOfPage.textContent = '';
+  }
 }
