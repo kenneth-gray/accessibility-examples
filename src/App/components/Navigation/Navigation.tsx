@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
-import { Link } from 'react-router-dom';
 
+import Link from '../Link';
 import styles from './styles.scss';
 
 const SkipLink = () => (
@@ -15,7 +15,11 @@ type NavigationItemProps = {
 };
 const NavigationItem = ({ to, children }: NavigationItemProps) => (
   <li className={styles.li}>
-    <Link className={styles.link} to={to}>
+    <Link
+      className={styles.link}
+      to={to}
+      aria-current={window.location.pathname === to ? 'page' : undefined}
+    >
       {children}
     </Link>
   </li>

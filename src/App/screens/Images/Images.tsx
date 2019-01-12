@@ -1,10 +1,11 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import grannySmithUrl from '../../../images/granny-smith.png';
+import Screen from '../components/Screen';
 import styles from './styles.scss';
 
 const Images = () => (
-  <Fragment>
+  <Screen title="Images">
     <h1>Images</h1>
     <h2>Use appropriate alternative text</h2>
     <ul>
@@ -43,7 +44,7 @@ const Images = () => (
       Postal Service in a 2013 set of four 33¢ stamps commemorating historic
       strains, joined by Northern Spy, Baldwin, and Golden Delicious.
     </p>
-  </Fragment>
+  </Screen>
 );
 
 export default Images;

@@ -1,10 +1,12 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+
+import Screen from './components/Screen';
 
 const Home = () => (
-  <Fragment>
+  <Screen title="Home">
     <h1>Accessibility examples</h1>
     <p>A set of accessibility examples.</p>
-  </Fragment>
+  </Screen>
 );
 
 export default Home;

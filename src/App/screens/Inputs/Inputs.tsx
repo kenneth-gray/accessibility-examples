@@ -1,6 +1,7 @@
 import React, { Fragment, ReactNode } from 'react';
 import { Link, Route } from 'react-router-dom';
 
+import Screen from '../components/Screen';
 import styles from './styles.scss';
 
 type FieldProps = {
@@ -172,7 +173,7 @@ const FinalAttempt = () => (
 );
 
 const Inputs = () => (
-  <Fragment>
+  <Screen title="Inputs">
     <h1>Inputs</h1>
     <h2>Login forms</h2>
     <ul className={styles.ul}>
@@ -201,7 +202,7 @@ const Inputs = () => (
     <Route exact path="/inputs/attempt-4" component={Attempt4} />
     <Route exact path="/inputs/attempt-5" component={Attempt5} />
     <Route exact path="/inputs/final-attempt" component={FinalAttempt} />
-  </Fragment>
+  </Screen>
 );
 
 export default Inputs;

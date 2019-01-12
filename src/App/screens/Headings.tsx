@@ -1,7 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import Screen from './components/Screen';
 
 const Headings = () => (
-  <Fragment>
+  <Screen title="Headings">
     <h1>Headings</h1>
     <p>
       The following content is from{' '}
@@ -41,7 +42,7 @@ const Headings = () => (
       text on a page, for example the main content:
     </p>
     <p>Content extract finishes here.</p>
-  </Fragment>
+  </Screen>
 );
 
 export default Headings;
