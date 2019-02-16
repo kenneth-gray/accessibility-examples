@@ -1,8 +1,10 @@
-import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+
+import Link from '../components/Link';
+import Screen from '../components/Screen';
 
 const Links = () => (
-  <Fragment>
+  <Screen title="Links">
     <h1>Links</h1>
     <h2>Don't use the word link</h2>
     <p>
@@ -25,7 +27,7 @@ const Links = () => (
       In most cases this will likely just be{' '}
       <a href="#main">skip to main content</a>.
     </p>
-  </Fragment>
+  </Screen>
 );
 
 export default Links;

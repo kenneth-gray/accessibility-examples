@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
-import { Link } from 'react-router-dom';
 
+import Link from '../Link';
 import styles from './styles.scss';
 
 const SkipLink = () => (
